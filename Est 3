@@ -1,0 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
+muestras=[]
+x=range(10,2001,10)
+for n in x:
+    muestras.append(np.random.normal(0,1,n))
+mean=[]
+for i in range(0,200):
+    mean.append(np.mean(muestras[i]))
+median=[]
+for i in range(0,200):
+    median.append(np.median(muestras[i]))
+fig, ax = plt.subplots()
+ax.scatter(indices,mean,s=10,label="Mean")
+plt.title('Mean')
+ax.legend()
+ax.grid(True)
+plt.show()
+fig, ax = plt.subplots()
+ax.scatter(indices,median,c="orange",s=10,label="Median")
+plt.title('Median')
+ax.legend()
+ax.grid(True)
+plt.show()
+fig, ax = plt.subplots()
+ax.scatter(indices,mean,s=10,label="Mean")
+ax.scatter(indices,median,c="orange",s=10,label="Median")
+plt.title('Mean & Median')
+ax.legend()
+ax.grid(True)
+plt.show()
